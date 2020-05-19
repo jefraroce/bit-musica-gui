@@ -1,27 +1,23 @@
-# Gui
+# BIT Música GUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+Interfaz gráfica de usuario desarrollada con [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6. para el proyecto BIT Música
 
-## Development server
+## Pasos de instalación y ejecución
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```shell
+git clone https://github.com/jefraroce/bit-musica-gui.git
+cd bit-musica-gui
+npm install
+```
 
-## Code scaffolding
+## Para arrancar el servidor de pruebas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta `ng serve` y abramos una pestaña de nuestro navegador con esta URL `http://localhost:4200/`.
 
-## Build
+## Generación automatica de archivos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecuta `ng generate component [nombre-del-componente]` para generar un nuevo componente. Tambien puedes usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Running unit tests
+## Para ver más opciones
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Para obtener ayuda sobre los comandos de Angular CLI ejecute `ng help` o vayá a la documentación oficial [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
