@@ -2,7 +2,7 @@
 
 Interfaz gráfica de usuario desarrollada con [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6. para el proyecto BIT Música
 
-## Pasos de instalación y ejecución
+## Pasos de instalación
 
 ```shell
 git clone https://github.com/jefraroce/bit-musica-gui.git
@@ -12,7 +12,7 @@ npm install
 
 ## Para arrancar el servidor de pruebas
 
-Ejecuta `ng serve` y abramos una pestaña de nuestro navegador con esta URL `http://localhost:4200/`.
+Ejecuta `ng serve` y podrás ver la aplicación corriendo en esta URL `http://localhost:4200/`.
 
 ## Generación automatica de archivos
 
