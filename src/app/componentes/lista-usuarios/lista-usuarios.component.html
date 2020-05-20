@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Nombre</th>
+      <th>Correo Electrónico</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td><img [src]="usuario.avatar" alt="" class="img-thumbnail" /></td>
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.correoElectronico }}</td>
+      <td>
+        <button class="btn btn-link text-danger" (click)="eliminarUsuario(usuario._id)">
+          <span class="material-icons">delete</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
