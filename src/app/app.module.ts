@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     InicioComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
