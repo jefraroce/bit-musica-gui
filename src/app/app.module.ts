@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
+import { CancionesComponent } from './componentes/canciones/canciones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     InicioComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    CancionesComponent
   ],
   imports: [
     BrowserModule,
