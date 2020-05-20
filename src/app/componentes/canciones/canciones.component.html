@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Artista</th>
+      <th>Album</th>
+      <th>Enlace</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cancion of canciones">
+      <td>{{ cancion.nombre }}</td>
+      <td>{{ cancion.artista }}</td>
+      <td>{{ cancion.album }}</td>
+      <td>{{ cancion.enlace }}</td>
+      <td>
+        <button class="btn btn-link text-danger" (click)="eliminarCancion(cancion._id)">
+          <span class="material-icons">delete</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
