@@ -16,4 +16,8 @@ export class CancionesService {
   eliminarCancion(id) {
     return this.http.delete(`${environment.API_URL}/canciones/${id}`);
   }
+  
+  editarCancion(id, cancion) {
+    return this.http.put(`${environment.API_URL}/canciones/${id}`, cancion);
+  }
 }
