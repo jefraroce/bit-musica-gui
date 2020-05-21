@@ -20,4 +20,8 @@ export class CancionesService {
   editarCancion(id, cancion) {
     return this.http.put(`${environment.API_URL}/canciones/${id}`, cancion);
   }
+  
+  crearCancion(cancion) {
+    return this.http.post(`${environment.API_URL}/canciones`, cancion);
+  }
 }
