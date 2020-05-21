@@ -3,10 +3,37 @@ import { CancionesService } from '../../servicios/canciones.service';
 
 @Component({
   selector: 'app-canciones',
+  styleUrls: ['./canciones.component.scss'],
   templateUrl: './canciones.component.html',
-  styleUrls: ['./canciones.component.scss']
 })
 export class CancionesComponent implements OnInit {
+	
+  tableSettings = {
+	actions: {
+	 add : false
+	},
+    columns: {
+      nombre: {
+        title: 'Nombre'
+      },
+      artista: {
+        title: 'Artista'
+      },
+      album: {
+        title: 'Album'
+      },
+      enlace: {
+        title: 'Enlace'
+      }
+	},
+	delete: {
+		confirmDelete: true
+	},
+	edit: {
+		confirmSave: true
+	},
+};	
+	
   canciones: [];
   
   constructor(private cancionesService: CancionesService) { }
@@ -21,15 +48,33 @@ export class CancionesComponent implements OnInit {
         this.canciones = canciones;
       });
   }
+	
+  editarCancion(event) {
+	
+	var cancionEditada = {
+        "nombre": event.newData.nombre,
+        "artista": event.newData.artista,
+        "album": event.newData.album,
+        "enlace": event.newData.enlace
+    };
+	this.cancionesService.editarCancion(event.newData._id, cancionEditada)
+      .subscribe((resultado) => {
+        this.cargarCanciones();
+      },
+      (error) => {
+        console.error('Error editando cancion ', error);
+      });  
+  }	
   
-  eliminarCancion(id) {
-    this.cancionesService.eliminarCancion(id)
+  borrarCancion(event) {
+	this.cancionesService.eliminarCancion(event.data._id)
       .subscribe((resultado) => {
         this.cargarCanciones();
       },
       (error) => {
         console.error('Error eliminando cancion ', error);
-      });
+      });  
   }
+  
 
 }
