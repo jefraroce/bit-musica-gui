@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { CompartidoModule } from './compartido/compartido.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutComponent,
     InicioComponent,
     ListaUsuariosComponent,
+    ContactoComponent,
+    CancionesComponent,
     MisCancionesComponent
   ],
   imports: [
@@ -24,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CompartidoModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    FormsModule,
+    ReactiveFormsModule,
+    Ng2SmartTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
