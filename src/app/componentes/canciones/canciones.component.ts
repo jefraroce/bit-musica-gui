@@ -9,9 +9,6 @@ import { CancionesService } from '../../servicios/canciones.service';
 export class CancionesComponent implements OnInit {
 	
   tableSettings = {
-	actions: {
-	 add : false
-	},
     columns: {
       nombre: {
         title: 'Nombre'
@@ -32,6 +29,9 @@ export class CancionesComponent implements OnInit {
 	edit: {
 		confirmSave: true
 	},
+	add: {
+		confirmCreate: true
+	}
 };	
 	
   canciones: [];
@@ -49,6 +49,22 @@ export class CancionesComponent implements OnInit {
       });
   }
 	
+  crearCancion(event) {
+	var cancionNueva = {
+        "nombre": event.newData.nombre,
+        "artista": event.newData.artista,
+        "album": event.newData.album,
+        "enlace": event.newData.enlace
+    };
+	this.cancionesService.crearCancion(cancionNueva)
+      .subscribe((resultado) => {
+        this.cargarCanciones();
+      },
+      (error) => {
+        console.error('Error creando cancion ', error);
+      });  
+  }
+  
   editarCancion(event) {
 	
 	var cancionEditada = {
