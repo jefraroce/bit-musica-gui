@@ -2,3 +2,9 @@
   font-size: 90px;
   font-weight: bold;
 }
+
+@media all and (max-width: 600px) {
+  .titulo {
+    font-size: 70px;
+  }
+}
