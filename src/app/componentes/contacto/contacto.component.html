@@ -3,17 +3,19 @@
         <h1>Contactanos</h1>
         <div class="titulo row">
             <div class="col-12">
-                <form>
+                <form [formGroup]="formularioMensaje" (ngSubmit)="enviarMensaje(formularioMensaje.value)">
                     <div class="col-12">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="text" placeholder="Nombre">
+                            <input formControlName="nombre" type="text" class="form-control" id="text"
+                                placeholder="Nombre">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Correo">
+                            <input formControlName="correoElectronico" type="email" class="form-control" id="email"
+                                placeholder="Correo">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="¿En que te podemos ayudar?"></textarea>
+                            <textarea formControlName="mensaje" class="form-control" id="exampleFormControlTextarea1"
+                                rows="3" placeholder="¿En que te podemos ayudar?"></textarea>
                         </div>
                         <div class="row">
                             <div class="boton col-12">

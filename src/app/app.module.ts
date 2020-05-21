@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CompartidoModule } from './compartido/compartido.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -22,7 +23,9 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
     BrowserModule,
     AppRoutingModule,
     CompartidoModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
