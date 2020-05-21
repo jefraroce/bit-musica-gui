@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CancionesComponent } from './componentes/canciones/canciones.component'
     BrowserModule,
     AppRoutingModule,
     CompartidoModule,
-    HttpClientModule
+    HttpClientModule,
+	Ng2SmartTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
