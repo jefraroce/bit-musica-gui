@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Canciones Works</h1>
+<div class="canciones d-flex flex-wrap justify-content-between">
+    <div class="cancion m-4" *ngFor="let cancion of canciones">
+        <div class="p-4">
+            <div class="d-flex align-items-center">
+                <button class="btn" (click)="reproducirCancion(cancion)">
+                    <span class="material-icons play-cancion">{{ cancion.audio && !cancion.audio.paused ? 'pause' : 'play_arrow'}}</span>
+                  </button>
+                <h2 class="m-0 mr-3">{{ cancion.nombre }}</h2>
+                <p class="m-0 ">{{ cancion.album }}</p>
+                <p class="m-0 ">{{ cancion.duracion }}</p>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" [style]="porcentaje" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>
+      </div>
+</div>

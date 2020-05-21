@@ -8,19 +8,23 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
+import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     InicioComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    MisCancionesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CompartidoModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
