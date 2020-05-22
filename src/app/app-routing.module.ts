@@ -5,7 +5,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
-
+import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
 
 const routes: Routes = [
   {
@@ -14,26 +14,30 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: InicioComponent
+        component: InicioComponent,
       },
       {
         path: 'usuarios',
-        component: ListaUsuariosComponent
+        component: ListaUsuariosComponent,
       },
       {
         path: 'contacto',
-        component: ContactoComponent
+        component: ContactoComponent,
       },
       {
         path: 'canciones',
-        component: CancionesComponent
+        component: CancionesComponent,
       },
-    ]
-  }
+      {
+        path: 'inicio-de-sesion',
+        component: InicioDeSesionComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
