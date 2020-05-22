@@ -1,19 +1,30 @@
-<div class="container">
-<h1>Canciones Works</h1>
-<div class="canciones d-flex flex-wrap justify-content-between">
+<img src="assets/images/BG-MUSICA.jpg" class="imagen-de-fondo" alt="" />
+<div class="container general">
+    <div class="p-4">
+        <div class="btn float-right">
+            <a class="btn btn-dark" routerLink="/canciones">Editar lista de Canciones</a>
+        </div>
+        <div class="reproductor">
+        <div class="d-flex  align-items-center">
+        <button (click)="reproducirCancion()" class="btn">
+            <span class="material-icons play-cancion">{{ cancionAreproducir && !cancionAreproducir.paused ? 'pause' : 'play_arrow'}}</span>
+        </button>
+        <h1 class="m-0 mr-3">{{nombreDeCancion}}</h1>
+        <p class="m-0 ">{{ nombreDeAlbum }}</p>
+    </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [style]="porcentaje" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        </div>
+</div>
+<div data-simplebar class="canciones d-flex flex-wrap justify-content-between">
     <div class="cancion m-4" *ngFor="let cancion of canciones">
         <div class="p-4">
-            <div class="d-flex align-items-center">
-                <button class="btn" (click)="reproducirCancion(cancion)">
-                    <span class="material-icons play-cancion">{{ cancion.audio && !cancion.audio.paused ? 'pause' : 'play_arrow'}}</span>
-                  </button>
+            <div (click)="elegirCancion(cancion)" class="d-flex align-items-center">
                 <h2 class="m-0 mr-3">{{ cancion.nombre }}</h2>
                 <p class="m-0 ">{{ cancion.album }}</p>
-                <p class="m-0 ">{{ cancion.duracion }}</p>
             </div>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" [style]="porcentaje" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
         </div>
       </div>
+    
 </div>

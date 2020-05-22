@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { SimplebarAngularModule } from 'simplebar-angular';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -31,7 +32,9 @@ import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    BrowserModule,
+    SimplebarAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]
