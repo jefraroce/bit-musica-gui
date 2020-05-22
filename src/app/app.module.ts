@@ -13,6 +13,7 @@ import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuar
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-d
     ListaUsuariosComponent,
     ContactoComponent,
     CancionesComponent,
-    InicioDeSesionComponent
+    InicioDeSesionComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

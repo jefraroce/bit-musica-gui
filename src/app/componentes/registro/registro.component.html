@@ -1,0 +1,32 @@
+<img src="assets/images/BG-USUARIO.jpg" class="imagen-de-fondo" alt="" />
+
+<section class="formulario">
+    <div class="form-interno">
+        <h1>Registro de usuario</h1>
+        <div class="titulo row">
+            <div class="col-12">
+                <form [formGroup]="formularioRegistro" (ngSubmit)="crearUsuario(formularioRegistro.value)">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="correoElectronico" type="email" class="form-control" id="email" placeholder="Correo electronico" />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="contrasena" type="password" class="form-control" id="pass" placeholder="Contraseña" />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="avatar" type="text" class="form-control" id="avatar" placeholder="link avatar" />
+                        </div>
+                        <div class="row">
+                            <div class="boton col-12">
+                                <button type="submit" class="btn btn-light">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

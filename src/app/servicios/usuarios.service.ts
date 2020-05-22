@@ -29,4 +29,11 @@ export class UsuariosService {
   consultarLocalStorage() {
     return JSON.parse(localStorage.getItem('usuario'));
   }
+
+  registrarUsuario(datos) {
+    return this.http.post(`${environment.API_URL}/usuarios/`, datos);
+  }
+  consultarEmail(datos) {
+    return this.http.post(`${environment.API_URL}/usuarios/email`, datos);
+  }
 }

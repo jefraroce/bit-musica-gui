@@ -6,6 +6,7 @@ import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuar
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'inicio-de-sesion',
         component: InicioDeSesionComponent,
+      },
+      {
+        path: 'registro',
+        component: RegistroComponent,
       },
     ],
   },
