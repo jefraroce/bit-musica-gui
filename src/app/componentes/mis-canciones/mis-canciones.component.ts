@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CancionesService } from '../../servicios/canciones.service';
-import { animationFrame } from 'rxjs/internal/scheduler/animationFrame';
 
 
 @Component({
@@ -8,7 +7,7 @@ import { animationFrame } from 'rxjs/internal/scheduler/animationFrame';
   templateUrl: './mis-canciones.component.html',
   styleUrls: ['./mis-canciones.component.scss']
 })
-export class MisCancionesComponent implements OnInit {
+export class MisCancionesComponent implements OnInit, OnDestroy {
 
   constructor(private cancionesService: CancionesService) { }
 
@@ -75,4 +74,14 @@ export class MisCancionesComponent implements OnInit {
     },100)
   }
 
+  ngOnDestroy(): void {
+    try {
+      if (this.cancionAreproducir) {
+        this.cancionAreproducir.pause();
+        clearInterval(this.progresoBarra);
+      }
+    } catch(error) {
+      console.error('Error ', error);
+    }
+  }
 }
