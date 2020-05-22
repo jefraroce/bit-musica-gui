@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CompartidoModule } from './compartido/compartido.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -15,6 +15,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,10 @@ import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-d
     ListaUsuariosComponent,
     ContactoComponent,
     CancionesComponent,
+    InicioDeSesionComponent,
+    RegistroComponent,
     MisCancionesComponent,
-    InicioDeSesionComponent
+    InicioDeSesionComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +40,9 @@ import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-d
     Ng2SmartTableModule,
     BrowserModule,
     SimplebarAngularModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

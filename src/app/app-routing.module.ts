@@ -7,8 +7,8 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
 
-
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -36,8 +36,12 @@ const routes: Routes = [
         component: InicioDeSesionComponent,
       },
       {
+        path: 'registro',
+        component: RegistroComponent,
+      },
+      {
         path: 'reproductor',
-        component: MisCancionesComponent
+        component: MisCancionesComponent,
       },
     ],
   },
@@ -45,6 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

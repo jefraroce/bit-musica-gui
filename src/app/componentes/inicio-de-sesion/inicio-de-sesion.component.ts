@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuariosService } from '../../servicios/usuarios.service';
-import { MensajesService } from '../../servicios/mensajes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-de-sesion',
@@ -14,7 +14,8 @@ export class InicioDeSesionComponent implements OnInit {
 
   constructor(
     private usuariosService: UsuariosService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.formularioSesion = this.formBuilder.group({
       correoElectronico: ['', Validators.required],
@@ -29,6 +30,7 @@ export class InicioDeSesionComponent implements OnInit {
       (usuario) => {
         this.usuario = usuario;
         this.usuariosService.guardarLocalStorage(usuario);
+        this.router.navigate(['/reproductor']);
       },
       (respuesta) => {
         // console.log(error);
