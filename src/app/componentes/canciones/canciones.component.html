@@ -1,1 +1,7 @@
-<ng2-smart-table [settings]="tableSettings" [source]="canciones" (editConfirm)="editarCancion($event)" (deleteConfirm)="borrarCancion($event)" (createConfirm)="crearCancion($event)" ></ng2-smart-table>
+<img src="assets/images/BG-MUSICA.jpg" class="imagen-de-fondo" alt="" />
+
+<div class="container">
+    <table class="table table-striped table-dark ">
+        <ng2-smart-table [settings]="tableSettings" [source]="canciones" (editConfirm)="editarCancion($event)" (deleteConfirm)="borrarCancion($event)" (createConfirm)="crearCancion($event)" ></ng2-smart-table>
+    </table>
+</div>  
