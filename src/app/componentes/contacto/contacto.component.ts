@@ -25,5 +25,14 @@ export class ContactoComponent implements OnInit {
 
   enviarMensaje(mensaje) {
     console.log(mensaje);
+
+    this.mensajesService.crearMensaje(mensaje).subscribe(
+      (respuesta) => {
+        console.log(respuesta);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }
