@@ -14,6 +14,7 @@ import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuar
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
 import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
+import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones
     ListaUsuariosComponent,
     ContactoComponent,
     CancionesComponent,
-    MisCancionesComponent
+    MisCancionesComponent,
+    InicioDeSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones
     ReactiveFormsModule,
     Ng2SmartTableModule,
     BrowserModule,
-    SimplebarAngularModule
+    SimplebarAngularModule,
+    Ng2SmartTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

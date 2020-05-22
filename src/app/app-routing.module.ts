@@ -8,6 +8,7 @@ import { CancionesComponent } from './componentes/canciones/canciones.component'
 import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
 
 
+import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
 
 const routes: Routes = [
   {
@@ -16,26 +17,30 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: InicioComponent
+        component: InicioComponent,
       },
       {
         path: 'usuarios',
-        component: ListaUsuariosComponent
+        component: ListaUsuariosComponent,
       },
       {
         path: 'contacto',
-        component: ContactoComponent
+        component: ContactoComponent,
       },
       {
         path: 'canciones',
-        component: CancionesComponent
+        component: CancionesComponent,
+      },
+      {
+        path: 'inicio-de-sesion',
+        component: InicioDeSesionComponent,
       },
       {
         path: 'reproductor',
         component: MisCancionesComponent
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
