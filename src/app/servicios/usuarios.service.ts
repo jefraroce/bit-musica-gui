@@ -30,3 +30,4 @@ export class UsuariosService {
     return JSON.parse(localStorage.getItem('usuario'));
   }
 }
+
