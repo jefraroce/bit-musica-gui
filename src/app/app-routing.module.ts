@@ -5,6 +5,8 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuarios.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { CancionesComponent } from './componentes/canciones/canciones.component';
+import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones.component';
+
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 
@@ -36,6 +38,10 @@ const routes: Routes = [
       {
         path: 'registro',
         component: RegistroComponent,
+      },
+      {
+        path: 'reproductor',
+        component: MisCancionesComponent,
       },
     ],
   },
