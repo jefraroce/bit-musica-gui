@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: black;
+  color: white;
+}
+
+h1.titulo {
+  font: 500 32px Roboto, "Helvetica Neue", sans-serif;
 }
 
 img.imagen-de-fondo {

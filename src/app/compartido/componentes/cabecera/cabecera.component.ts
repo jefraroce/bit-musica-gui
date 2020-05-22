@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../../../servicios/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabecera',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabecera.component.scss']
 })
 export class CabeceraComponent implements OnInit {
+  usuario;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private usuariosService: UsuariosService,
+    private router: Router
+    ) {
+    this.usuariosService.autenticacion$.subscribe((usuarioAutenticado) => {
+      this.usuario = usuarioAutenticado;
+    });
   }
 
+  ngOnInit(): void {
+    this.usuariosService.consultarLocalStorage();
+  }
+
+  cerrarSesion() {
+    this.usuariosService.borrarLocalStorage();
+    this.router.navigate(['/inicio-de-sesion']);
+  }
 }

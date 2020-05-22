@@ -11,3 +11,20 @@
 #navbarHeader.navbar-collapse {
   flex-grow: inherit;
 }
+
+
+.avatar {
+  height: 48px;
+  width: 48px;
+}
+
+.nombre-usuario {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.4rem;
+}
+
+.nombre-usuario:hover {
+  color: lightgray;
+  cursor: pointer;
+}

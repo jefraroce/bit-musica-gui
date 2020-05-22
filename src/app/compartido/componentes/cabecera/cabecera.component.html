@@ -3,11 +3,15 @@
     <a class="navbar-brand d-flex align-items-center my-2" routerLink="/">
       <img src="assets/images/LOGO.svg" alt="" class="logo mr-1" />
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+    <button *ngIf="!usuario" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarHeader">
+    <a *ngIf="usuario" (click)="cerrarSesion()" title="Cerrar Sesión">
+      <span class="nombre-usuario">{{ usuario.nombre }}</span>
+      <img [src]="usuario.avatar" class="avatar rounded-circle img-thumbnail" alt="" />
+    </a>
+    <div *ngIf="!usuario" class="collapse navbar-collapse" id="navbarHeader">
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="btn btn-link mr-1" routerLink="/inicio-de-sesion" routerLinkActive="active">Iniciar Sesión <span class="sr-only">(current)</span></a>

@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+// Añade principios reactivos
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuariosService {
+  private usuarioAutenticado = null;
+  private autenticacion = new BehaviorSubject<{}>({});
+
+  autenticacion$ = this.autenticacion.asObservable();
+
   constructor(private http: HttpClient) {}
 
   traerUsuarios() {
@@ -19,20 +26,29 @@ export class UsuariosService {
   iniciarSesion(datos) {
     return this.http.post(`${environment.API_URL}/usuarios/login`, datos);
   }
+
   guardarLocalStorage(usuario) {
+    this.usuarioAutenticado = usuario;
     localStorage.setItem('usuario', JSON.stringify(usuario));
+    this.autenticacion.next(this.usuarioAutenticado);
   }
+
   borrarLocalStorage() {
-    localStorage.setItem('usuario', ' ');
+    localStorage.removeItem('usuario');
+    this.usuarioAutenticado = null;
+    this.autenticacion.next(null);
   }
 
   consultarLocalStorage() {
-    return JSON.parse(localStorage.getItem('usuario'));
+    this.usuarioAutenticado = JSON.parse(localStorage.getItem('usuario'));
+    this.autenticacion.next(this.usuarioAutenticado);
+    return this.usuarioAutenticado;
   }
 
   registrarUsuario(datos) {
     return this.http.post(`${environment.API_URL}/usuarios/`, datos);
   }
+
   consultarEmail(datos) {
     return this.http.post(`${environment.API_URL}/usuarios/email`, datos);
   }

@@ -9,6 +9,7 @@ import { MisCancionesComponent } from './componentes/mis-canciones/mis-canciones
 
 import { InicioDeSesionComponent } from './componentes/inicio-de-sesion/inicio-de-sesion.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { AutenticacionGuard } from './guardianes/autenticacion.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'usuarios',
+        canActivate: [AutenticacionGuard],
         component: ListaUsuariosComponent,
       },
       {
@@ -29,6 +31,7 @@ const routes: Routes = [
       },
       {
         path: 'canciones',
+        canActivate: [AutenticacionGuard],
         component: CancionesComponent,
       },
       {
@@ -41,6 +44,7 @@ const routes: Routes = [
       },
       {
         path: 'reproductor',
+        canActivate: [AutenticacionGuard],
         component: MisCancionesComponent,
       },
     ],
