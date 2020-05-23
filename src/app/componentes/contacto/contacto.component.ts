@@ -26,9 +26,6 @@ export class ContactoComponent implements OnInit {
   }
 
   enviarMensaje(mensaje) {
-
-
-
     this.mensajesService.crearMensaje(mensaje).subscribe(
       (respuesta) => {
         this.formularioMensaje.reset();

@@ -1,8 +1,11 @@
 .table-transparent {
-    background-color: rgba($color: black, $alpha: 0.2);
+    background-color: rgba($color: black, $alpha: 0.5);
     color: white;
 }
 .imagen-de-fondo {
     height: max-content;
 }
 
+a.ng2-smart-action.ng2-smart-action-edit-edit {
+    font-weight: 300;
+}
