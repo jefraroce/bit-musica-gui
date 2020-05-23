@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MensajesService } from '../../servicios/mensajes.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+const swal = require('sweetalert');
 
 @Component({
   selector: 'app-contacto',
@@ -21,14 +22,17 @@ export class ContactoComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   enviarMensaje(mensaje) {
-    console.log(mensaje);
+
+
 
     this.mensajesService.crearMensaje(mensaje).subscribe(
       (respuesta) => {
-        console.log(respuesta);
+        this.formularioMensaje.reset();
+        swal('Gracias', 'Tu mensaje ha sido enviado', 'success');
       },
       (error) => {
         console.error(error);
